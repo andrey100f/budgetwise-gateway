@@ -1,0 +1,39 @@
+jwt:
+  secret: MiAVzqUXy5Tfr1kVIGpPMiAVzqUXy5Tfr1kVIGpP
+eureka:
+  client:
+    register-with-eureka: false
+server:
+  port: ${PORT}
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+            allowedMaxAge: 3600
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: budgets
+          uri: https://budgetwise-budgets-production.up.railway.app
+          predicates:
+            - Path=/api/budgets/**
+        - id: expenses
+          uri: https://budgetwise-expenses-production.up.railway.app
+          predicates:
+            - Path=/api/expenses/**
+        - id: users
+          uri: https://budgetwise-users-production.up.railway.app
+          predicates:
+              - Path=/api/users/**
+        - id: auth
+          uri: https://budgetwise-auth-production.up.railway.app
+          predicates:
+              - Path=/api/auth/**
