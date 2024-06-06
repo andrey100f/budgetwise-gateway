@@ -2,7 +2,8 @@ jwt:
   secret: MiAVzqUXy5Tfr1kVIGpPMiAVzqUXy5Tfr1kVIGpP
 eureka:
   client:
-    register-with-eureka: false
+    service-url:
+      defaultZone: https://budget-wise-discovery-server-production.up.railway.app/eureka/
 server:
   port: ${PORT}
 spring:
