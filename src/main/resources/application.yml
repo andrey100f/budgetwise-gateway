@@ -19,8 +19,6 @@ spring:
             allowedHeaders: "*"
             allowedMethods: "*"
             allowedMaxAge: 3600
-    config:
-      enabled: false
       discovery:
         locator:
           enabled: true
@@ -36,8 +34,10 @@ spring:
         - id: users
           uri: https://budgetwise-users-production.up.railway.app
           predicates:
-              - Path=/api/users/**
+            - Path=/api/users/**
         - id: auth
           uri: https://budgetwise-auth-production.up.railway.app
           predicates:
-              - Path=/api/auth/**
+            - Path=/api/auth/**
+    config:
+      enabled: false
