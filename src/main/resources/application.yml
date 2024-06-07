@@ -2,6 +2,8 @@ jwt:
   secret: MiAVzqUXy5Tfr1kVIGpPMiAVzqUXy5Tfr1kVIGpP
 eureka:
   client:
+    service-url:
+      defaultZone: https://budget-wise-discovery-server-production.up.railway.app/eureka/
     register-with-eureka: false
 server:
   port: ${PORT}
@@ -16,7 +18,7 @@ spring:
             allowedOrigins: "*"
             allowedHeaders: "*"
             allowedMethods: "*"
-#            allowedMaxAge: 3600
+            allowedMaxAge: 3600
     config:
       enabled: false
       discovery:
