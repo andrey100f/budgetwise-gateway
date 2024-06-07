@@ -23,9 +23,9 @@ public class GatewayConfig {
             .route("expenses", r -> r.path("/api/expenses/**")
                 .filters(f -> f.filter(authenticationFilter))
                 .uri("lb://expenses"))
-//            .route("users", r -> r.path("/api/users/**")
-//                .filters(f -> f.filter(authenticationFilter))
-//                .uri("lb://users"))
+            .route("users", r -> r.path("/api/users/**")
+                .filters(f -> f.filter(authenticationFilter))
+                .uri("lb://users"))
             .build();
     }
 }
