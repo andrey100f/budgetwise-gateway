@@ -14,9 +14,4 @@ public class BudgetwiseGatewayApplication {
 		SpringApplication.run(BudgetwiseGatewayApplication.class, args);
 	}
 
-	@LoadBalanced
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
-
 }

@@ -19,13 +19,13 @@ public class GatewayConfig {
         return builder.routes()
             .route("budgets", r -> r.path("/api/budgets/**")
                 .filters(f -> f.filter(authenticationFilter))
-                .uri("lb://budgets"))
+                .uri("https://budgetwise-budgets-production.up.railway.app"))
             .route("expenses", r -> r.path("/api/expenses/**")
                 .filters(f -> f.filter(authenticationFilter))
-                .uri("lb://expenses"))
+                .uri("https://budgetwise-expenses-production.up.railway.app"))
             .route("users", r -> r.path("/api/users/**")
                 .filters(f -> f.filter(authenticationFilter))
-                .uri("lb://users"))
+                .uri("https://budgetwise-users-production.up.railway.app"))
             .build();
     }
 }
